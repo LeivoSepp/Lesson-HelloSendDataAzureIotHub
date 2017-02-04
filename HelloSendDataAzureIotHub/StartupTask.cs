@@ -24,10 +24,8 @@ namespace HelloSendDataAzureIotHub
             await _sendDeviceClient.SendEventAsync(message);
         }
 
-        internal static BackgroundTaskDeferral Deferral = null;
         public void Run(IBackgroundTaskInstance taskInstance)
         {
-            Deferral = taskInstance.GetDeferral();
             initDevice();
 
             while (true)
